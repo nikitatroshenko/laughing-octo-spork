@@ -72,12 +72,12 @@ void vigenere_destroy(struct vigenere *v)
 
 void vigenere_decrypt_stream(struct vigenere *v, FILE *in, FILE *out)
 {
-	vigenere_substitute_stream(v, in, out, TRUE);
+	vigenere_substitute_stream(v, in, out, FALSE);
 }
 
 void vigenere_encrypt_stream(struct vigenere *v, FILE *in, FILE *out)
 {
-	vigenere_substitute_stream(v, in, out, FALSE);
+	vigenere_substitute_stream(v, in, out, TRUE);
 }
 
 char *do_substitute_str(struct vigenere *v,
@@ -117,7 +117,7 @@ int is_neutral(struct vigenere *v, char c)
 	/* TODO: will be used to store neutral characters */
 	(void) v;
 
-	return strchr(NEUTRAL_CHARACTERS, c) != NULL;
+	return c < 'A' || c > 'Z';//strchr(NEUTRAL_CHARACTERS, c) != NULL;
 }
 
 void vigenere_substitute_stream(struct vigenere *v,
@@ -128,7 +128,7 @@ void vigenere_substitute_stream(struct vigenere *v,
 	char *buf = calloc(v->key_length, sizeof *buf);
 	size_t read;
 
-	while (-1 != (read = fread(buf, sizeof *buf, v->key_length, in))) {
+	while (0 != (read = fread(buf, sizeof *buf, v->key_length, in))) {
 		do_substitute_str(v, buf, v->key_length, is_encrypt);
 
 		fwrite(buf, 1, read, out);
