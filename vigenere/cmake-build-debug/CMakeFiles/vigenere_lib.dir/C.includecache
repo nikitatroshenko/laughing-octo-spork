@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nikita/CLionProjects/laughing-octo-spork/kasiski.c
+kasiski.h
+/home/nikita/CLionProjects/laughing-octo-spork/kasiski.h
+
+/home/nikita/CLionProjects/laughing-octo-spork/kasiski.h
+wchar.h
+-
+
+/home/nikita/CLionProjects/laughing-octo-spork/main.c
+stdio.h
+-
+stdlib.h
+-
+memory.h
+-
+vigenere.h
+/home/nikita/CLionProjects/laughing-octo-spork/vigenere.h
+
+/home/nikita/CLionProjects/laughing-octo-spork/vigenere.c
+vigenere.h
+/home/nikita/CLionProjects/laughing-octo-spork/vigenere.h
+string.h
+-
+
+/home/nikita/CLionProjects/laughing-octo-spork/vigenere.h
+stdlib.h
+-
+stdio.h
+-
+
