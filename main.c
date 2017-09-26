@@ -4,9 +4,9 @@
 
 #include "vigenere.h"
 
-#define DEFAULT_PLAIN_TEXT "CRYPTOGRAPHY AND DATA SECURITY"
-#define DEFAULT_PLAIN_LEN 31
-#define DEFAULT_KEY "MOUSE"
+//#define DEFAULT_PLAIN_TEXT "CRYPTOGRAPHY AND DATA SECURITY"
+//#define DEFAULT_PLAIN_LEN 31
+//#define DEFAULT_KEY "MOUSE"
 
 //struct vigenere_options {
 //    FILE *in;
