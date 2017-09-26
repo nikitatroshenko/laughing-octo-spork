@@ -1,2 +1,0 @@
-/usr/bin/ar qc libvigenere_lib.a  CMakeFiles/vigenere_lib.dir/main.c.o CMakeFiles/vigenere_lib.dir/vigenere.c.o CMakeFiles/vigenere_lib.dir/kasiski.c.o
-/usr/bin/ranlib libvigenere_lib.a

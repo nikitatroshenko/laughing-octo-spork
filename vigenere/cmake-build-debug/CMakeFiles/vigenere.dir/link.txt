@@ -1,1 +1,0 @@
-/usr/bin/cc -fPIC -g  -shared -Wl,-soname,libvigenere.so -o libvigenere.so CMakeFiles/vigenere.dir/main.c.o CMakeFiles/vigenere.dir/vigenere.c.o CMakeFiles/vigenere.dir/kasiski.c.o 
