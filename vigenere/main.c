@@ -40,24 +40,26 @@
 
 int main(int argc, char const *argv[])
 {
-	struct vigenere *v = vigenere_init("MOUSE", 5);
 
 	FILE *in = stdin;// */fopen("/home/nikita/lorem_ipsum", "rt");
 	FILE *out = stdout;// */fopen("/home/nikita/lorem_ipsum_decrypted", "wt");
 
-	if (argc < 2) {
+	if (argc < 3) {
 		fprintf(stderr, "no args specified\n");
 		exit(1);
 	} else if (!strncmp(argv[1], "encrypt", strlen("encrypt"))) {
+		struct vigenere *v = vigenere_init(argv[2], strlen(argv[2]));
 		vigenere_encrypt_stream(v, in, out);
+		vigenere_destroy(v);
 	} else if (!strncmp(argv[1], "decrypt", strlen("decrypt"))) {
+		struct vigenere *v = vigenere_init(argv[2], strlen(argv[2]));
 		vigenere_decrypt_stream(v, in, out);
+		vigenere_destroy(v);
 	} else {
 		fprintf(stderr, "no action specified\n");
 		exit(1);
 	}
 
-	vigenere_destroy(v);
 
 	return 0;
 }
